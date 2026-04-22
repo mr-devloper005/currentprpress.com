@@ -40,9 +40,9 @@ const variantShells = {
   'sbm-library': 'bg-[linear-gradient(180deg,#f7f8fc_0%,#ffffff_100%)]',
 } as const
 
-export async function TaskListPage({ task, category }: { task: TaskKey; category?: string }) {
-  if (TASK_LIST_PAGE_OVERRIDE_ENABLED) {
-    return await TaskListPageOverride({ task, category })
+export async function TaskListPage({ task, category, range }: { task: TaskKey; category?: string; range?: string }) {
+  if (TASK_LIST_PAGE_OVERRIDE_ENABLED && task === 'mediaDistribution') {
+    return await TaskListPageOverride({ task, category, range })
   }
 
   const taskConfig = getTaskConfig(task)

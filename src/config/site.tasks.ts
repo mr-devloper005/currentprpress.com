@@ -1,9 +1,9 @@
 export const siteTaskDefinitions = [
   {
     key: 'mediaDistribution',
-    label: 'Updates',
+    label: 'Press room',
     route: '/updates',
-    description: 'Recent posts and newsroom updates.',
+    description: 'Press releases and public announcements in the newswire archive.',
     contentType: 'mediaDistribution',
     enabled: true,
   },
