@@ -1,102 +1,136 @@
 import type { SitePost } from '@/lib/site-connector'
 
-/** Rich placeholder posts for the editorial home until the CMS feed is wired. No images — text only. */
-const MOCK_ENTRIES: Array<{ title: string; category: string; summary: string }> = [
+const MOCK_IMAGES = [
+  'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=750&fit=crop',
+  'https://images.unsplash.com/photo-1486406146926-c627a92ad4ab?w=1200&h=750&fit=crop',
+] as const
+
+const MOCK_ENTRIES: Array<{ title: string; category: string; summary: string; image: string }> = [
   {
-    title: 'Regional Partnership Expansion Announced',
-    category: 'Business',
+    title: 'Strategic Media Partnerships Expand for the Quarter Ahead',
+    category: 'Corporate',
     summary:
-      'We are opening three new collaboration corridors this quarter. The roadmap prioritizes shared editorial standards, faster handoffs between teams, and a single source of truth for announcements. Partners can expect clearer timelines, named contacts, and weekly office hours for escalations.',
+      'CurrentPRPress is widening co-distribution with regional desks so announcements reach finance, technology, and policy readers through a single, auditable publish path.',
+    image: MOCK_IMAGES[0],
   },
   {
-    title: 'Quarterly Product Update Released to Press',
+    title: 'Newsroom Tools Update Emphasizes Review Speed and Clarity',
     category: 'Product',
     summary:
-      'This release tightens publishing workflows, improves draft visibility for approvers, and adds structured fields for compliance notes. Editorial leads asked for fewer clicks between review and publish; we reduced that path by half while keeping audit trails intact.',
+      'Editorial approvers now see a consolidated diff for headlines, subheads, and contact blocks. Embargo timers stay visible in the status bar to reduce last-minute errors.',
+    image: MOCK_IMAGES[1],
   },
   {
-    title: 'Industry Event Participation Confirmed',
+    title: 'Coverage Calendar: Upcoming Industry Briefings and Demo Days',
     category: 'Events',
     summary:
-      'Our team will host a walkthrough of the newsroom stack and a live Q&A on content governance. Sessions are designed for operators who manage high-volume updates without sacrificing accuracy. Registration opens next week with limited seats for hands-on labs.',
+      'We will host a plain-language walkthrough of wire formatting, social snippets, and logo usage. Sessions are short, practical, and built for in-house comms teams.',
+    image: MOCK_IMAGES[2],
   },
   {
-    title: 'Leadership Statement on Market Growth',
+    title: 'Statement on Measured Growth and Channel Quality',
     category: 'Leadership',
     summary:
-      'Growth this year reflects disciplined investment in distribution infrastructure rather than chasing vanity metrics. We are doubling down on reader trust, transparent sourcing, and measurable outcomes for partners who rely on this channel for critical updates.',
+      'We are prioritizing accurate distribution over raw volume. That means stricter link validation, clearer datelines, and support for organizations that file frequent material updates.',
+    image: MOCK_IMAGES[3],
   },
   {
-    title: 'New Service Rollout Now Live',
-    category: 'Operations',
+    title: 'Service Desk Hours for Public Companies and IR Teams',
+    category: 'IR',
     summary:
-      'The rollout introduces tiered publishing roles, scheduled embargo windows, and automated sanity checks before go-live. Early adopters reported shorter incident response times and fewer manual corrections during peak traffic windows.',
+      'Dedicated windows for earnings-adjacent releases, with staff ready to help verify tables, footnotes, and contact lines before items clear the wire.',
+    image: MOCK_IMAGES[4],
   },
   {
-    title: 'Editorial Guidelines Refresh for 2026',
+    title: 'Editorial Standards Refresh: Headlines, Attribution, and Corrections',
     category: 'Editorial',
     summary:
-      'Headlines must stand alone in feeds; dekks are optional but encouraged for complex stories. We clarified voice rules for crisis coverage, attribution for third-party data, and when to run corrections versus silent fixes. The full guide lives in the team wiki with printable checklists.',
+      'Headlines should read cleanly in search and social cards. We clarified when to run a correction notice versus an inline update, and how to label third-party data.',
+    image: MOCK_IMAGES[5],
   },
   {
-    title: 'Data Privacy Review Completed',
-    category: 'Compliance',
+    title: 'Data Handling Review Wraps; Updated Playbook Published',
+    category: 'Trust',
     summary:
-      'External counsel signed off on retention schedules, export procedures, and regional carve-outs. Product and legal aligned on a single dashboard for requests so support teams do not need to switch tools during time-sensitive inquiries.',
+      'Retention rules, export steps, and regional options are documented in one place. Support can answer common data questions without bouncing teams between tools.',
+    image: MOCK_IMAGES[6],
   },
   {
-    title: 'Community Feedback Integration Sprint',
-    category: 'Community',
+    title: 'Reader Feedback Shapes Navigation and Topic Pages',
+    category: 'Product',
     summary:
-      'We synthesized five hundred inbound notes into twelve themes. The sprint produced quick wins for navigation clarity and a longer bet on personalized digests. Thank-you responses went to everyone who left contact details.',
+      'We grouped beats that readers open together, tightened empty states, and made related items easier to find at the end of every release.',
+    image: MOCK_IMAGES[7],
   },
   {
-    title: 'Infrastructure Hardening Ahead of Peak Season',
-    category: 'Technology',
+    title: 'Resilience Drills Show Strong Performance Under Peak Load',
+    category: 'Operations',
     summary:
-      'Caching layers were reshaped to isolate hot documents, and we added circuit breakers around optional enrichments. Load tests simulated three times last year’s peak with acceptable latency budgets and zero data loss in failover drills.',
+      'Synthetic tests covered three times our busiest hour last season. Optional enrichments are isolated so core pages stay fast if an upstream service stalls.',
+    image: MOCK_IMAGES[8],
   },
   {
-    title: 'Year in Review: What Readers Engaged With Most',
+    title: 'Year in Review: What Audiences Opened Most Often',
     category: 'Insights',
     summary:
-      'Long explainers outperformed short alerts on time-on-page, while bullet briefing formats won on return visits. The lesson is not one format to rule them all—it is matching depth to intent and signing posts clearly so audiences know what they are opening.',
+      'Explainers won on time-on-page; tight briefs won on return visits. The takeaway is to label intent in the first line so readers know what they are opening.',
+    image: MOCK_IMAGES[9],
   },
   {
-    title: 'Sustainability Report: Operations and Footprint',
+    title: 'Sustainability Note: Lighter Previews, Leaner Page Weight',
     category: 'Impact',
     summary:
-      'Energy use per published story dropped after batching builds and tightening preview sandboxes. Travel policy now defaults to virtual briefings unless on-site verification is essential. Suppliers received a scored checklist covering labor and materials traceability.',
+      'Batching previews and trimming auto-embeds reduced energy per story load. We will keep monitoring third-party modules that can wait until after first paint.',
+    image: MOCK_IMAGES[10],
   },
   {
-    title: 'Accessibility Audit: Wins and Remaining Gaps',
+    title: 'Accessibility Improvements on Core Reading Templates',
     category: 'Accessibility',
     summary:
-      'Keyboard flows passed on primary templates; color contrast issues were fixed on alert banners. Remaining work focuses on embedded third-party widgets and ensuring skip links stay stable when dynamic promos load. Fixes are ticketed with owners and dates.',
+      'Landmarks and skip links stay stable as promos load. Contrast issues on callouts were fixed; remaining work tracks embedded widgets with vendor timelines.',
+    image: MOCK_IMAGES[11],
   },
   {
-    title: 'Newsletter Relaunch With Smarter Segments',
+    title: 'Headlines Digest: Frequency Caps and Topic Affinity',
     category: 'Audience',
     summary:
-      'Segments now respect frequency caps and topic affinity instead of blasting the full list. Welcome paths introduce beat preferences early. Early metrics show higher confirmation rates and fewer one-star inbox feedback comments.',
+      'We respect reader cadence. Digests can favor beats you follow, with cap-aware scheduling to avoid overloading the same inboxes on busy days.',
+    image: MOCK_IMAGES[12],
   },
   {
-    title: 'Security Bulletin: Credential Rotation Complete',
+    title: 'Security: Scheduled Credential Rotation Complete',
     category: 'Security',
     summary:
-      'All integration keys were rotated after the scheduled maintenance window. No customer action is required. We added anomaly alerts on auth failure spikes and documented rollback steps for on-call engineers in the runbook appendix.',
+      'Integration keys rotated in the standard maintenance window. Anomaly checks on sign-in traffic help on-call staff spot issues early without user disruption.',
+    image: MOCK_IMAGES[13],
   },
   {
-    title: 'Field Notes: Reporting From the Regional Desk',
+    title: 'Field Desk: Filing on Deadline With Clean Context',
     category: 'Field',
     summary:
-      'Correspondents filed dispatches under tighter word limits with mandatory context sidebars. Editors tested a “why this matters now” line atop each piece; focus groups said it helped casual readers stay oriented without feeling talked down to.',
+      'Reporters and comms teams can add a “why it matters” line to orient casual readers, without crowding the lede on fast-moving items.',
+    image: MOCK_IMAGES[14],
   },
   {
-    title: 'Benchmarks: How We Compare to Sector Averages',
+    title: 'Benchmarks: Comparing Our Latency to Sector Averages',
     category: 'Research',
     summary:
-      'We are ahead on median time-to-publish for breaking items and slightly behind on multimedia attach rate by design. The gap is intentional while we keep pages lightweight. Quarterly reviews will revisit when bandwidth and rights workflows mature.',
+      'We remain ahead on median time-to-publish for breaking material while keeping multimedia optional so pages stay lightweight and reliable.',
+    image: MOCK_IMAGES[15],
   },
 ]
 
@@ -120,15 +154,14 @@ export function getHomeEditorialMockPosts(): SitePost[] {
         category: entry.category,
         description: entry.summary,
       },
-      media: [],
+      media: [{ url: entry.image, type: 'image' }],
       tags: ['mediaDistribution', entry.category],
-      authorName: 'Editorial desk',
-      publishedAt: new Date(Date.now() - index * 86400000 * 3).toISOString(),
+      authorName: 'CurrentPRPress Desk',
+      publishedAt: new Date(Date.now() - index * 86400000 * 2).toISOString(),
     }
   })
 }
 
-/** Real posts first (capped), then mocks by slug until `maxTotal` — swap mocks out later when the feed is full. */
 export function mergeEditorialPostsForHome(real: SitePost[], mocks: SitePost[], maxTotal = 16): SitePost[] {
   const seen = new Set<string>()
   const out: SitePost[] = []
