@@ -178,12 +178,7 @@ export async function TaskListPageOverride({ task, category, range }: { task: Ta
                     </div>
                   </div>
                   <div className="p-4">
-                    <p className="text-[11px] text-[#6b5c4c]">
-                      {post.publishedAt
-                        ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-                        : ''}
-                    </p>
-                    <h2 className="mt-1 text-lg font-semibold leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
+                    <h2 className="text-lg font-semibold leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
                       {post.title}
                     </h2>
                     <p className="mt-2 line-clamp-2 text-sm text-[#4a3f36]">{excerpt(post.summary)}</p>

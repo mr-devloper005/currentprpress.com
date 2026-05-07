@@ -13,7 +13,7 @@ export const siteContent = {
     description:
       'Publish and read announcement-grade updates with wire discipline—clean layout, clear contacts, and archives built for comms, IR, and public audiences.',
     primaryCta: {
-      label: 'Send a Press Release',
+      label: 'Send a Press Media',
       href: '/create/mediaDistribution',
     },
     secondaryCta: {
@@ -28,14 +28,14 @@ export const siteContent = {
   },
   home: {
     metadata: {
-      title: 'currentprpress.com — press releases & announcements',
+      title: 'currentprpress.com — press media & announcements',
       description:
         'CurrentPRPress: a press distribution channel for comms, IR, and public updates with a wire-style archive on currentprpress.com.',
       openGraphTitle: 'currentprpress.com',
       openGraphDescription:
-        'The news starts here. Publish and follow press releases, filings, and announcement-grade updates in one place.',
+        'The news starts here. Publish and follow press media, filings, and announcement-grade updates in one place.',
       keywords: [
-        'press release',
+        'press media',
         'newswire',
         'currentprpress.com',
         'IR announcements',
@@ -79,7 +79,7 @@ export const siteContent = {
       href: '/updates',
     },
   },
-  taskSectionHeading: 'Press releases',
+  taskSectionHeading: 'Press media',
   taskSectionDescriptionSuffix: 'The newest items from the newswire archive.',
 } as const
 
@@ -114,7 +114,7 @@ export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'soci
   },
   mediaDistribution: {
     title: 'Latest news',
-    description: 'The CurrentPRPress archive of press releases and public announcements.',
+    description: 'The CurrentPRPress archive of press media and public announcements.',
   },
 }
 

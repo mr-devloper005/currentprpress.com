@@ -4,7 +4,7 @@ export const siteIdentity = {
   tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Press distribution that reads like the news',
   description:
     process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
-    'CurrentPRPress is a newswire-style channel for press releases, IR updates, and public announcements on currentprpress.com.',
+    'CurrentPRPress is a newswire-style channel for press media, IR updates, and public announcements on currentprpress.com.',
   domain: process.env.NEXT_PUBLIC_SITE_DOMAIN || 'currentprpress.com',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://currentprpress.com',
   ogImage: process.env.NEXT_PUBLIC_SITE_OG_IMAGE || '/og-default.png',

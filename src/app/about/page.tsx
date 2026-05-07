@@ -56,12 +56,6 @@ export default function AboutPage() {
                 >
                   Browse releases
                 </Link>
-                <Link
-                  href="/pricing"
-                  className="inline-flex items-center justify-center rounded-full border border-[#222222]/20 bg-white px-5 py-2.5 text-sm font-semibold text-[#222] hover:border-[#222222]/40"
-                >
-                  View pricing
-                </Link>
               </div>
             </div>
             <div className="relative min-h-[280px] overflow-hidden rounded-2xl border border-[#222222]/10 bg-white">

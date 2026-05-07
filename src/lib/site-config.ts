@@ -50,11 +50,11 @@ export const SITE_CONFIG: SiteConfig = {
   tasks: siteTaskDefinitions.map((task) => ({ ...task })),
   taskViews: { ...siteTaskViews },
   seo: {
-    title: `${siteIdentity.name} — press releases on currentprpress.com`,
+    title: `${siteIdentity.name} — press media on currentprpress.com`,
     titleTemplate: `%s | ${siteIdentity.name}`,
     description: siteIdentity.description,
     keywords: [
-      'press release',
+      'press media',
       'newswire',
       'IR news',
       'public announcements',

@@ -11,7 +11,7 @@ export const NAVBAR_OVERRIDE_ENABLED = true
 
 const staticNav = [
   { label: 'Latest news', href: '/updates' },
-  { label: 'Pricing', href: '/pricing' },
+
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -111,7 +111,7 @@ export function NavbarOverride() {
               className="mt-2 flex items-center justify-center rounded-full bg-[#ff6d1f] py-2.5 text-sm font-semibold text-white"
               onClick={() => setOpen(false)}
             >
-              Send a press release
+              Send a press media
             </Link>
           </div>
         </div>

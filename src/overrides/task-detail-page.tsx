@@ -51,12 +51,6 @@ export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: st
               {post.title}
             </h1>
             <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-[#4a3f36]">
-              <time dateTime={post.publishedAt || undefined}>
-                {post.publishedAt
-                  ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-                  : ''}
-              </time>
-              <span className="text-[#6b5c4c]">·</span>
               <span>{post.authorName || 'CurrentPRPress Desk'}</span>
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
@@ -125,11 +119,6 @@ export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: st
                       href={`/updates/${item.slug}`}
                       className="group block h-full overflow-hidden rounded-2xl border border-[#222222]/10 bg-white p-4 transition hover:border-[#ff6d1f]/40"
                     >
-                      <p className="text-[11px] text-[#6b5c4c]">
-                        {item.publishedAt
-                          ? new Date(item.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-                          : ''}
-                      </p>
                       <p className="mt-1 font-semibold leading-snug text-[#222] group-hover:text-[#c2410c]">{item.title}</p>
                     </Link>
                   </li>
