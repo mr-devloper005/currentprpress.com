@@ -2,80 +2,85 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'Independent news desk',
+    tagline: 'Press wire for teams who ship real news',
   },
   footer: {
-    tagline: 'Simple publishing for press-style updates',
+    tagline: 'Structured releases, calmer review, better reading.',
   },
   hero: {
-    badge: 'Latest updates',
-    title: ['Clear publishing, simple reading, no extra noise.'],
+    badge: 'Press newswire',
+    title: ['The News Starts Here'],
     description:
-      'A minimal article-style publishing template built for regular updates, announcements, and media distribution posts.',
+      'Publish and read announcement-grade updates with wire discipline—clean layout, clear contacts, and archives built for comms, IR, and public audiences.',
     primaryCta: {
-      label: 'Browse latest posts',
-      href: '/updates',
+      label: 'Send a Press Media',
+      href: '/create/mediaDistribution',
     },
     secondaryCta: {
-      label: 'Contact us',
-      href: '/contact',
+      label: 'Learn more',
+      href: '/about',
     },
-    searchPlaceholder: 'Search posts',
+    searchPlaceholder: 'Search the archive',
     focusLabel: 'Latest',
-    featureCardBadge: 'editor note',
-    featureCardTitle: 'Recent updates appear directly on the homepage.',
-    featureCardDescription:
-      'The homepage works as a clean front page so new posts stay visible without decorative sections getting in the way.',
+    featureCardBadge: 'desk note',
+    featureCardTitle: 'Fresh items appear in the newsroom feed.',
+    featureCardDescription: 'Releases are formatted for quick scanning, with room for the details readers expect on official news.',
   },
   home: {
     metadata: {
-      title: 'Latest updates and newsroom posts',
+      title: 'currentprpress.com — press media & announcements',
       description:
-        'Read the latest updates, announcements, and stories through a simple archive-first publishing experience.',
-      openGraphTitle: 'Latest updates and newsroom posts',
+        'CurrentPRPress: a press distribution channel for comms, IR, and public updates with a wire-style archive on currentprpress.com.',
+      openGraphTitle: 'currentprpress.com',
       openGraphDescription:
-        'A simple publishing template for updates, announcements, and readable article pages.',
-      keywords: ['newsroom posts', 'latest updates', 'announcements', 'press articles'],
+        'The news starts here. Publish and follow press media, filings, and announcement-grade updates in one place.',
+      keywords: [
+        'press media',
+        'newswire',
+        'currentprpress.com',
+        'IR announcements',
+        'corporate communications',
+        'media distribution',
+      ],
     },
-    introBadge: 'About',
-    introTitle: 'A quiet publishing template made for regular updates.',
+    introBadge: 'About the channel',
+    introTitle: 'A focused surface for public announcements.',
     introParagraphs: [
-      'This template is designed for sites that publish straightforward updates and want the homepage to behave like a clean front page rather than a product landing page.',
-      'Posts are visible immediately, archives stay easy to scan, and the reading page keeps the focus on the article itself.',
-      'The interface is intentionally simple so the site feels usable, familiar, and fast to update.',
+      'The homepage is built like a business-wire landing experience: a bold hero, featured cards, and proof sections that explain why the channel is trustworthy.',
+      'The live archive stays under Latest news so you can read everything that shipped, with filters and search to narrow in.',
+      'Article pages emphasize readability and sharing so releases travel beyond the first visit.',
     ],
-    sideBadge: 'What it prioritizes',
+    sideBadge: 'What to expect',
     sidePoints: [
-      'Recent posts directly on the homepage.',
-      'Simple archive layout with sidebar search and recent items.',
-      'Readable article pages without comments or extra modules.',
-      'A publishing-first structure that stays easy to maintain.',
+      'Hero and sections tuned for a press-distribution product.',
+      'Releases in the /updates newsroom, not buried in a social-style feed.',
+      'Detail pages with structured bodies and social sharing for distribution teams.',
     ],
     primaryLink: {
-      label: 'Open archive',
+      label: 'Open the newsroom',
       href: '/updates',
     },
     secondaryLink: {
-      label: 'Contact desk',
+      label: 'Contact the desk',
       href: '/contact',
     },
   },
   cta: {
-    badge: 'Get in touch',
-    title: 'Use this template when publishing regular updates matters more than visual effects.',
+    badge: 'Start publishing',
+    title: 'Ready when your next announcement is.',
     description:
-      'A straightforward layout for announcements, media coverage, partner updates, and newsroom-style content.',
+      'From product launches to regulated filings, the template keeps the story on the text while the layout stays calm.',
     primaryCta: {
-      label: 'Contact us',
+      label: 'Contact the desk',
       href: '/contact',
     },
     secondaryCta: {
-      label: 'View archive',
+      label: 'Browse releases',
       href: '/updates',
     },
   },
-  taskSectionHeading: 'Latest posts',
-  taskSectionDescriptionSuffix: 'Read the newest published updates.',
+  taskSectionHeading: 'Press media',
+  taskSectionDescriptionSuffix: 'The newest items from the newswire archive.',
 } as const
 
 export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'social'>, { title: string; description: string }> = {
@@ -108,8 +113,8 @@ export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'soci
     description: 'Open PDFs and downloadable files.',
   },
   mediaDistribution: {
-    title: 'Latest updates',
-    description: 'Read the latest published updates and announcements.',
+    title: 'Latest news',
+    description: 'The CurrentPRPress archive of press media and public announcements.',
   },
 }
 
@@ -128,10 +133,9 @@ export const taskIntroCopy: Record<
   comment: { title: 'Comments', paragraphs: ['Commentary and response posts.'], links: [{ label: 'Home', href: '/' }] },
   org: { title: 'Organizations', paragraphs: ['Organization pages and entities.'], links: [{ label: 'Home', href: '/' }] },
   mediaDistribution: {
-    title: 'Latest updates',
+    title: 'Latest news',
     paragraphs: [
-      'This archive is designed for straightforward publishing: regular updates, announcements, and media-style posts presented in a clean reading format.',
-      'The layout stays simple so visitors can scan headlines quickly, open stories easily, and move through the archive without distraction.',
+      'The CurrentPRPress newsroom lists wire-style updates and announcements. Scan by category or time window, or jump into search to find a headline fast.',
     ],
     links: [
       { label: 'Home', href: '/' },
