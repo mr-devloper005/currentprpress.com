@@ -72,7 +72,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     path: '/pricing',
     title: 'Pricing | CurrentPRPress',
-    description: 'Plans and add-ons for press release distribution on CurrentPRPress.',
+    description: 'Plans and add-ons for press media distribution on CurrentPRPress.',
   })
 }
 

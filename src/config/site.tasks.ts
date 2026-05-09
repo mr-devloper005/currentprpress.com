@@ -3,7 +3,7 @@ export const siteTaskDefinitions = [
     key: 'mediaDistribution',
     label: 'Press room',
     route: '/updates',
-    description: 'Press releases and public announcements in the newswire archive.',
+    description: 'Press media and public announcements in the newswire archive.',
     contentType: 'mediaDistribution',
     enabled: true,
   },

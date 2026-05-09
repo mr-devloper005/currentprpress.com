@@ -159,7 +159,7 @@ export async function HomePageOverride() {
               href={SUBMIT}
               className="inline-flex min-w-[200px] items-center justify-center rounded-full bg-[#ff6d1f] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#ff6d1f]/20 transition hover:bg-[#ff5500]"
             >
-              Send a Press Release
+              Send a Press Media
             </Link>
             <Link
               href="/about"

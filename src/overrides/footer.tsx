@@ -7,9 +7,9 @@ const col = [
   {
     title: 'Distribution',
     links: [
-      { label: 'Press releases', href: '/updates' },
+      { label: 'Press media', href: '/updates' },
       { label: 'Send a release', href: '/create/mediaDistribution' },
-      { label: 'Pricing', href: '/pricing' },
+
     ],
   },
   {
@@ -40,12 +40,7 @@ export function FooterOverride() {
               {SITE_CONFIG.name}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-white/60">{SITE_CONFIG.description}</p>
-            <a
-              href="mailto:desk@currentprpress.com"
-              className="mt-4 inline-block text-sm font-medium text-[#ff6d1f] hover:underline"
-            >
-              desk@currentprpress.com
-            </a>
+
           </div>
           {col.map((c) => (
             <div key={c.title}>
